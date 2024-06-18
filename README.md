@@ -24,9 +24,11 @@ The Autocorrelation Function (ACF) and Partial Autocorrelation Function (PACF) p
 The ACF plot displays weak geometric decay (can be seen by plotting the ACF till 500) whereas the PACF cuts off after 1-lag (0-lag has not been plotted). This suggests an AR(1) model or an ARMA(1,0) model. For the arima() function it implies an ARIMA(1,0,0) Model. This can further be verified using the Akaike Information Criterion (AIC) presented for different models.
 
 Thus, the best estimate for a model is
+
 $$
 X_t = 0.9966 X_{t-1} + \epsilon_t
 $$
+
 with $\epsilon_t$ being a zero-mean white noise with variance $0.0007594$
 
 <p align="center">
