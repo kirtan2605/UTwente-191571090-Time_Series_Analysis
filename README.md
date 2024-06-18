@@ -61,7 +61,7 @@ Calculating the AIC values for all models upto the ARMA(5,5), it can be seen tha
 </p>
 
 $$
-X_t = 1.1436 \X_{t-1} + 0.4225 \X_{t-2} − 0.943 \X_{t-3} + 0.318 \X_{t-4} + 0.57 \epsilon_{t-1} − 0.4815 \epsilon_{t-2} − 0.4158 \epsilon_{t-3} − 0.3354 \epsilon_{t-4} − 0.0905 \epsilon_{t-5} + \epsilon_t
+X_t = 1.1436 X_{t-1} + 0.4225 X_{t-2} − 0.943 X_{t-3} + 0.318 X_{t-4} + 0.57 \epsilon_{t-1} − 0.4815 \epsilon_{t-2} − 0.4158 \epsilon_{t-3} − 0.3354 \epsilon_{t-4} − 0.0905 \epsilon_{t-5} + \epsilon_t
 $$
 
 
