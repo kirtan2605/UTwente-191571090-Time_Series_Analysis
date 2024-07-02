@@ -6,6 +6,9 @@ The assignment deals with characterizing time series data by eliminating the tre
   <div style="clear:both; margin-bottom:200px;"></div>
 </p>
 
+For more details, please refer to the [complete project report](https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/TSA_Assignment_s2935848.pdf).
+
+
 # Dow Jones Index Analysis
 The increase in variation over time in the Dow Jones Index data implies an underlying multiplicative model. The model is then reduced to an additive time series and analysed further.
 
