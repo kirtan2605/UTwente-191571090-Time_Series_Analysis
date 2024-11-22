@@ -27,10 +27,14 @@ Key steps in the analysis:
   <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_1.png" width="800">
 </div>
 
-#### Correlation and Model Selection
-<div align="center" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_2.png" width="100%">
-  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_AIC.png" width="100%">
+#### Correlation Analysis
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_2.png" width="800">
+</div>
+
+#### Model Selection
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_AIC.png" width="800">
 </div>
 
 **Key Findings:**
