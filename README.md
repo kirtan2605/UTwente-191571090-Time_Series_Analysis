@@ -95,5 +95,3 @@ $$
 - Statistical Modeling
 - Signal Processing Techniques
 
-## Contact
-[Your Contact Information]
