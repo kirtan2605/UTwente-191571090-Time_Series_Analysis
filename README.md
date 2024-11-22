@@ -1,77 +1,95 @@
-# Time Series Analysis
-The assignment deals with characterizing time series data by eliminating the trend and seasonal component followed by the mathematical modeling of the incidental component. The verification of the model is done by analyzing the residual. A white noise residual implies that the model has sufficient accuracy. The assignment deals with performing the above mentioned procedure using R.
+# Time Series Analysis Project
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/Procedure.png" style="width:500px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
+## Overview
+This project focuses on advanced time series analysis techniques, exploring methodological approaches to characterizing and modeling time series data across different domains.
 
-For more details, please refer to the [complete project report](https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/TSA_Assignment_s2935848.pdf).
+🔗 [Complete Project Report](https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/TSA_Assignment_s2935848.pdf)
 
+## Project Methodology
 
-# Dow Jones Index Analysis
-The increase in variation over time in the Dow Jones Index data implies an underlying multiplicative model. The model is then reduced to an additive time series and analysed further.
+### Analytical Procedure
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Procedure.png" width="600">
+</div>
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/Dow_Jones_1.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
+Key steps in the analysis:
+- Eliminate trend and seasonal components
+- Mathematical modeling of incidental component
+- Residual analysis
+- Model verification using white noise test
 
-The Autocorrelation Function (ACF) and Partial Autocorrelation Function (PACF) plots help us analyse the data correlations and estimate the order of ARMA process. 
-The ACF plot displays weak geometric decay (can be seen by plotting the ACF till 500) whereas the PACF cuts off after 1-lag (0-lag has not been plotted). This suggests an AR(1) model or an ARMA(1,0) model. For the arima() function it implies an ARIMA(1,0,0) Model. 
+## Case Studies
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/Dow_Jones_2.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
+### 1. Dow Jones Index Analysis
 
-This can further be verified using the Akaike Information Criterion (AIC) presented for different models.
+#### Time Series Characteristics
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_1.png" width="800">
+</div>
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/Dow_Jones_AIC.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
+#### Correlation and Model Selection
+<div align="center" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_2.png" width="100%">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_AIC.png" width="100%">
+</div>
 
-Thus, the best estimate for a model is
+**Key Findings:**
+- Multiplicative model with underlying variation
+- Autocorrelation Function (ACF) shows weak geometric decay
+- Partial Autocorrelation Function (PACF) cuts off after 1-lag
+- Suggested Model: ARIMA(1,0,0)
 
+**Final Model Equation:**
 $$
 X_t = 0.9966 X_{t-1} + \epsilon_t
 $$
+- White noise variance: 0.0007594
+- Residuals considered white noise
 
-with $\epsilon_t$ being a zero-mean white noise with variance $0.0007594$
+#### Residual Analysis
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/Dow_Jones_3.png" width="800">
+</div>
 
+### 2. ECG Signal Analysis
 
-The residual analysis shows that the residuals can be considered as white noise. The mean is 4.297635e-05, and can be considered to be negligible. The ACF Plot confirms that the residuals are indeed white noise. The ACF Plot deplays only 1 peak, at 0-lag, while the others can be considered insignificant, since they lie below the significance interval.
+#### Correlation Analysis
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/ECG_1.png" width="800">
+</div>
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/Dow_Jones_3.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
+#### Model Selection
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/ECG_AIC.png" width="800">
+</div>
 
-# ECG Analysis
-The ACF plot is decaying, hence AR component is present. The PACF is not abruptly reduced to zero and a slight decay is visible in it as well, hence the model is expected to be ARMA.
+**Key Findings:**
+- ACF shows decaying pattern (AR component present)
+- PACF displays slight decay
+- Best Models: ARMA(4,5) and ARMA(5,4)
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/ECG_1.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
-
-Calculating the AIC values for all models upto the ARMA(5,5), it can be seen that the ARMA(4,5) has the least AIC value and hence is the best model for the given dataset. ARMA(5,4) is a similarly good model. This complies with the observation made from the ACF and PACF plots. 
-
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/ECG_AIC.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
-
+**Final Model Equation:**
 $$
 X_t = 1.1436 X_{t-1} + 0.4225 X_{t-2} − 0.943 X_{t-3} + 0.318 X_{t-4} + 0.57 \epsilon_{t-1} − 0.4815 \epsilon_{t-2} − 0.4158 \epsilon_{t-3} − 0.3354 \epsilon_{t-4} − 0.0905 \epsilon_{t-5} + \epsilon_t
 $$
 
+#### Residual Analysis
+<div align="center">
+  <img src="https://raw.githubusercontent.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/master/images/ECG_2.png" width="800">
+</div>
 
-The residuals can be considered as white noise. The mean is -6.724934e-05, and can be considered to be negligible. The ACF Plot confirms that the residuals are indeed white noise. The ACF Plot deplays only 1 peak, at 0-lag, while the others can be considered insignificant, since they lie below the significance interval.
+## Key Techniques
+- Time Series Decomposition
+- ARIMA Modeling
+- Autocorrelation Analysis
+- Akaike Information Criterion (AIC)
+- Residual White Noise Testing
 
-<p align="center">
-  <img src="https://github.com/kirtan2605/UTwente-191571090-Time_Series_Analysis/blob/master/images/ECG_2.png" style="width:750px; height:auto; float:left;">
-  <div style="clear:both; margin-bottom:200px;"></div>
-</p>
+## Tools and Technologies
+- R Programming
+- Time Series Analysis Libraries
+- Statistical Modeling
+- Signal Processing Techniques
 
+## Contact
+[Your Contact Information]
